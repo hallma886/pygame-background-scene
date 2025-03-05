@@ -11,6 +11,7 @@ ORANGE = (255, 95, 31)
 YELLOW = (255, 255, 0)
 FOREST_GREEN = (50, 140, 103)
 BROWN = (196, 164, 132)
+BARK_BROWN = (88, 57,39)
 # Game window dimentions
 WINDOW_WIDTH = 900
 WINDOW_HEIGHT = 600
@@ -21,7 +22,6 @@ TITLE = "My Pygame Project"
 
 # Frame rate (frames per second)
 FPS = 60
-
 
 
 
