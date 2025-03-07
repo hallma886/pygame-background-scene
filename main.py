@@ -33,6 +33,10 @@ def main():
         pygame.draw.polygon(screen, config.FOREST_GREEN, [[150 + x_offset, 400 + y_offset], [75 + x_offset, 230 + y_offset], [0 + x_offset, 400 + y_offset]])
         pygame.draw.polygon(screen, config.FOREST_GREEN, [[140 + x_offset, 350 + y_offset], [75 + x_offset, 230 + y_offset], [10 + x_offset, 350 + y_offset]])
  
+    def draw_cresent():
+        pygame.draw.circle(screen, config.YELLOW, (800, 70), 45, 0)
+        pygame.draw.circle(screen, config.BLACK, (780, 70), 45, 0)
+
     # Main game loop
     running = True
     while running:
@@ -41,7 +45,7 @@ def main():
         # Fill the screen with a background color 
         screen.fill(config.BLACK) 
 
-        pygame.draw.circle(screen, config.YELLOW, (800, 70), 45, 0)
+        draw_cresent()
 
         # Draw trees at different locations
         draw_tree(0, 0)
@@ -69,7 +73,8 @@ def main():
         text = font.render('Grand Traverse Academy', True, config.WHITE)
         screen.blit(text, [0, 90])
 
-
+        # mouse_pos = pygame.mouse.get_pos()
+        # draw_text(screen, mouse_pos, mouse_pos, 15)
 
 
 
