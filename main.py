@@ -26,10 +26,12 @@ def main():
     screen = init_game()  # Initialize the game and get the screen
     clock = pygame.time.Clock() # Initialize the clock objecct
     
-    def draw_tree():
-        pygame.draw.rect(screen, config.BARK_BROWN, [60, 400, 30, 45])
-        pygame.draw.polygon(screen, config.FOREST_GREEN, [[150, 400], [75, 250], [0, 400]])
-        pygame.draw.polygon(screen, config.FOREST_GREEN, [[140, 350], [75, 230], [10, 350]])
+    def draw_tree(x_offset, y_offset):
+        # Draw the trunk
+        pygame.draw.rect(screen, config.BARK_BROWN, [60 + x_offset, 400 + y_offset, 30, 45])
+        # Draw the leaves
+        pygame.draw.polygon(screen, config.FOREST_GREEN, [[150 + x_offset, 400 + y_offset], [75 + x_offset, 230 + y_offset], [0 + x_offset, 400 + y_offset]])
+        pygame.draw.polygon(screen, config.FOREST_GREEN, [[140 + x_offset, 350 + y_offset], [75 + x_offset, 230 + y_offset], [10 + x_offset, 350 + y_offset]])
  
     # Main game loop
     running = True
@@ -39,16 +41,30 @@ def main():
         # Fill the screen with a background color 
         screen.fill(config.BLACK) 
 
-        #y_offset = 10
-        #x_offset = 10
-        #while y_offset < 100:
-        #    draw_tree()
-        #    y_offset = y_offset + 10 # Increase value of y_offset by 10 each time the loop runs
+        pygame.draw.circle(screen, config.YELLOW, (800, 70), 45, 0)
 
-        draw_tree()
+        # Draw trees at different locations
+        draw_tree(0, 0)
+        draw_tree(50, 0)
+        draw_tree(-50, 0)
+        draw_tree(150, 0)
+        draw_tree(200, 0)
+        draw_tree(250, 0)
+        draw_tree(100, 0)
+        draw_tree(305, 0)
+        draw_tree(350, 0)
+        draw_tree(390, 0)
+        draw_tree(450, 0)
+        draw_tree(500, 0)
+        draw_tree(550, 0)
+        draw_tree(600, 0)
+        draw_tree(659, 0)
+        draw_tree(700, 0)
+        draw_tree(750, 0)
+        draw_tree(800, 0)
 
         font = pygame.font.SysFont("Ariel", 50)
-        text = font.render('Matthew hall', True, config.WHITE)
+        text = font.render('Matthew Hall', True, config.WHITE)
         screen.blit(text, [0, 50])
         text = font.render('Grand Traverse Academy', True, config.WHITE)
         screen.blit(text, [0, 90])
