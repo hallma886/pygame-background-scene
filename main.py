@@ -37,6 +37,9 @@ def main():
         pygame.draw.circle(screen, config.YELLOW, (800, 70), 45, 0)
         pygame.draw.circle(screen, config.BLACK, (780, 70), 45, 0)
 
+    def draw_rectangle(screen, rect, color, thickness):
+        pygame.draw.rect(screen, color, rect, thickness)
+
     # Main game loop
     running = True
     while running:
@@ -73,10 +76,7 @@ def main():
         text = font.render('Grand Traverse Academy', True, config.WHITE)
         screen.blit(text, [0, 90])
 
-        # mouse_pos = pygame.mouse.get_pos()
-        # draw_text(screen, mouse_pos, mouse_pos, 15)
-
-
+        draw_rectangle(screen, [5, 445, 893, 593], (35, 35, 35),  0)
 
         pygame.display.flip()  # Update the display
 
