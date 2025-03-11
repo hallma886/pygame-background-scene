@@ -40,6 +40,10 @@ def main():
     def draw_rectangle(screen, rect, color, thickness):
         pygame.draw.rect(screen, color, rect, thickness)
 
+    def draw_text(screen, text, font,):
+        inserted_text = font.render(text, True)
+        screen.blit(inserted_text)
+
     # Main game loop
     running = True
     while running:
@@ -77,6 +81,9 @@ def main():
         screen.blit(text, [0, 90])
 
         draw_rectangle(screen, [5, 445, 893, 593], (35, 35, 35),  0)
+
+        mouse_pos = pygame.mouse.get_pos()
+        draw_text(screen, mouse_pos, mouse_pos,)
 
         pygame.display.flip()  # Update the display
 
