@@ -33,9 +33,23 @@ def main():
         pygame.draw.polygon(screen, config.FOREST_GREEN, [[150 + x_offset, 400 + y_offset], [75 + x_offset, 230 + y_offset], [0 + x_offset, 400 + y_offset]])
         pygame.draw.polygon(screen, config.FOREST_GREEN, [[140 + x_offset, 350 + y_offset], [75 + x_offset, 230 + y_offset], [10 + x_offset, 350 + y_offset]])
  
-    def draw_cresent():
+    def draw_cresent_right():
         pygame.draw.circle(screen, config.YELLOW, (800, 70), 45, 0)
         pygame.draw.circle(screen, config.BLACK, (780, 70), 45, 0)
+
+    def draw_cresent_left():
+        pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
+        pygame.draw.circle(screen, config.BLACK, (800, 70), 45, 0)
+
+    def draw_half_moon_left():
+        pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
+        pygame.draw.rect(screen, config.BLACK, [780, 20, 723, 113], 0)
+
+    def draw_full_moon():
+        pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
+    
+    def draw_new_moon():
+        pygame.draw.circle(screen, config.DIM_GREY, (800, 70), 45, 0)
 
     def draw_rectangle(screen, rect, color, thickness):
         pygame.draw.rect(screen, color, rect, thickness)
@@ -52,7 +66,22 @@ def main():
         # Fill the screen with a background color 
         screen.fill(config.BLACK) 
 
-        draw_cresent()
+        
+        #draw_new_moon()
+        #draw_cresent_left()
+        #draw_half_moon_left()
+        #draw_cresent_right()
+        draw_full_moon()
+
+
+
+
+
+
+
+
+
+
 
         # Draw trees at different locations
         draw_tree(0, 0)
@@ -83,7 +112,7 @@ def main():
         draw_rectangle(screen, [5, 445, 893, 593], (35, 35, 35),  0)
 
         mouse_pos = pygame.mouse.get_pos()
-        draw_text(screen, mouse_pos, mouse_pos,)
+        print(mouse_pos)
 
         pygame.display.flip()  # Update the display
 
