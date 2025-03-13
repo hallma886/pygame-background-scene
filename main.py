@@ -45,6 +45,13 @@ def main():
         pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
         pygame.draw.rect(screen, config.BLACK, [780, 20, 723, 113], 0)
 
+    def draw_half_moon_right():
+        pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
+        pygame.draw.rect(screen, config.BLACK, [780, 20, 723, 113], 0)
+
+    def draw_waning_moon():
+        
+
     def draw_full_moon():
         pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
     
@@ -54,9 +61,7 @@ def main():
     def draw_rectangle(screen, rect, color, thickness):
         pygame.draw.rect(screen, color, rect, thickness)
 
-    def draw_text(screen, text, font,):
-        inserted_text = font.render(text, True)
-        screen.blit(inserted_text)
+
 
     # Main game loop
     running = True
@@ -68,10 +73,11 @@ def main():
 
         
         #draw_new_moon()
-        #draw_cresent_left()
+        draw_cresent_left()
         #draw_half_moon_left()
+        #draw_half_moon_right()
         #draw_cresent_right()
-        draw_full_moon()
+        #draw_full_moon()
 
 
 
