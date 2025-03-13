@@ -47,9 +47,9 @@ def main():
 
     def draw_half_moon_right():
         pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
-        pygame.draw.rect(screen, config.BLACK, [780, 20, 723, 113], 0)
+        pygame.draw.rect(screen, config.BLACK, [723, 113, 100, 100], 0)
 
-    def draw_waning_moon():
+    #def draw_waning_moon():
         
 
     def draw_full_moon():
@@ -73,9 +73,9 @@ def main():
 
         
         #draw_new_moon()
-        draw_cresent_left()
+        #draw_cresent_left()
         #draw_half_moon_left()
-        #draw_half_moon_right()
+        draw_half_moon_right()
         #draw_cresent_right()
         #draw_full_moon()
 
