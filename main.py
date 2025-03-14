@@ -22,7 +22,7 @@ def handle_events():
     return True  # Continue running if no quit event
 
 def main():
-
+    moon_phases_counter =0
     screen = init_game()  # Initialize the game and get the screen
     clock = pygame.time.Clock() # Initialize the clock objecct
     
@@ -34,26 +34,31 @@ def main():
         pygame.draw.polygon(screen, config.FOREST_GREEN, [[140 + x_offset, 350 + y_offset], [75 + x_offset, 230 + y_offset], [10 + x_offset, 350 + y_offset]])
  
     def draw_cresent_right():
-        pygame.draw.circle(screen, config.YELLOW, (800, 70), 45, 0)
+        pygame.draw.circle(screen, config.MOON_COLOR, (800, 70), 45, 0)
         pygame.draw.circle(screen, config.BLACK, (780, 70), 45, 0)
 
     def draw_cresent_left():
-        pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
+        pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
         pygame.draw.circle(screen, config.BLACK, (800, 70), 45, 0)
 
     def draw_half_moon_left():
-        pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
+        pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
         pygame.draw.rect(screen, config.BLACK, [780, 20, 723, 113], 0)
 
     def draw_half_moon_right():
-        pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
-        pygame.draw.rect(screen, config.BLACK, [723, 113, 100, 100], 0)
+        pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
+        pygame.draw.rect(screen, config.BLACK, [693, 23, 90, 330], 0)
 
-    #def draw_waning_moon():
-        
+    def draw_waning_moon():
+        pygame.draw.circle(screen, config.MOON_COLOR, (800, 70), 45, 0)
+        pygame.draw.circle(screen, config.BLACK, (850, 64), 45, 0)
+
+    def draw_waxing_moon():
+        pygame.draw.circle(screen, config.MOON_COLOR, (850, 64), 45, 0)
+        pygame.draw.circle(screen, config.BLACK, (800, 70), 45, 0)
 
     def draw_full_moon():
-        pygame.draw.circle(screen, config.YELLOW, (780, 70), 45, 0)
+        pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
     
     def draw_new_moon():
         pygame.draw.circle(screen, config.DIM_GREY, (800, 70), 45, 0)
@@ -71,23 +76,30 @@ def main():
         # Fill the screen with a background color 
         screen.fill(config.BLACK) 
 
-        
-        #draw_new_moon()
-        #draw_cresent_left()
-        #draw_half_moon_left()
-        draw_half_moon_right()
-        #draw_cresent_right()
-        #draw_full_moon()
+        if moon_phases_counter > 420:
+            draw_cresent_right()
+        elif moon_phases_counter > 360:
+            draw_half_moon_right()
+        elif moon_phases_counter > 300:
+            draw_waxing_moon()
+        elif moon_phases_counter > 240:
+            draw_full_moon()
+        elif moon_phases_counter > 180:
+            draw_waning_moon()
+        elif moon_phases_counter > 120:
+            draw_half_moon_left()
+        elif moon_phases_counter > 60:
+            draw_cresent_left()
+        elif moon_phases_counter > 0:
+            draw_new_moon()
+
+        moon_phases_counter +=1
+        if moon_phases_counter > 480:
+            moon_phases_counter = 0
 
 
 
-
-
-
-
-
-
-
+    
 
         # Draw trees at different locations
         draw_tree(0, 0)
@@ -114,16 +126,17 @@ def main():
         screen.blit(text, [0, 50])
         text = font.render('Grand Traverse Academy', True, config.WHITE)
         screen.blit(text, [0, 90])
-
         draw_rectangle(screen, [5, 445, 893, 593], (35, 35, 35),  0)
-
         mouse_pos = pygame.mouse.get_pos()
-        print(mouse_pos)
 
+        text = font.render(str(mouse_pos), True, config.WHITE)
+        screen.blit(text, mouse_pos)
+
+
+        
         pygame.display.flip()  # Update the display
 
         clock.tick(config.FPS) # Limit frame rate to specified number of frames per second (FPS)
-
     pygame.quit()  # Quit Pygame
     sys.exit()  # Exit the program
 
