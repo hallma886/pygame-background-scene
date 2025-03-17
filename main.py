@@ -50,18 +50,18 @@ def main():
         pygame.draw.rect(screen, config.BLACK, [693, 23, 90, 330], 0)
 
     def draw_waning_moon():
-        pygame.draw.circle(screen, config.MOON_COLOR, (800, 70), 45, 0)
-        pygame.draw.circle(screen, config.BLACK, (850, 64), 45, 0)
+        pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
+        pygame.draw.circle(screen, config.BLACK, (840, 70), 45, 0)
 
     def draw_waxing_moon():
-        pygame.draw.circle(screen, config.MOON_COLOR, (850, 64), 45, 0)
-        pygame.draw.circle(screen, config.BLACK, (800, 70), 45, 0)
+        pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
+        pygame.draw.circle(screen, config.BLACK, (730, 70), 45, 0)
 
     def draw_full_moon():
         pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
     
     def draw_new_moon():
-        pygame.draw.circle(screen, config.DIM_GREY, (800, 70), 45, 0)
+        pygame.draw.circle(screen, config.DIM_GREY, (780, 70), 45, 0)
 
     def draw_rectangle(screen, rect, color, thickness):
         pygame.draw.rect(screen, color, rect, thickness)
