@@ -34,8 +34,8 @@ def main():
         pygame.draw.polygon(screen, config.FOREST_GREEN, [[140 + x_offset, 350 + y_offset], [75 + x_offset, 230 + y_offset], [10 + x_offset, 350 + y_offset]])
  
     def draw_cresent_right():
-        pygame.draw.circle(screen, config.MOON_COLOR, (800, 70), 45, 0)
-        pygame.draw.circle(screen, config.BLACK, (780, 70), 45, 0)
+        pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
+        pygame.draw.circle(screen, config.BLACK, (760, 70), 45, 0)
 
     def draw_cresent_left():
         pygame.draw.circle(screen, config.MOON_COLOR, (780, 70), 45, 0)
